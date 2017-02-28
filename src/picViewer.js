@@ -11,15 +11,15 @@
 require('./picViewer.scss');
 
 module.exports = {
-	name : 'sf-picViewer',
-	template : require('./picViewer.html'),
-	props : {
+    name: 'sf-picviewer',
+    template: require('./picViewer.html'),
+    props: {
 
-	},
-	data : function() {
-		return {}
-	},
-	methods : {
-		
-	}
+    },
+    data: function() {
+        return {}
+    },
+    methods: {
+
+    }
 }

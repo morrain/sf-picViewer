@@ -2,7 +2,8 @@ module.exports =  {
     entry: "./src/picViewer.js",
     output: {
         path: "./docs",
-        filename: "index.js"
+        filename: "index.js",
+        library : 'sfPicviewer'
     },
 	//devtool: "source-map",
     resolve:{
