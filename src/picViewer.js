@@ -175,6 +175,7 @@ module.exports = {
                         left: num2px((window.innerWidth - width) / 2),
                         top: num2px((window.innerHeight - height) / 2)
                     };
+                    me.container.style = css;
                 } else if (!con.isFull) {
                     var oriTop = px2num(getStyle(con.el, 'top')),
                         oriLeft = px2num(getStyle(con.el, 'left')),
@@ -187,9 +188,10 @@ module.exports = {
                         left: num2px(oriLeft + (oriWidth - width) / 2),
                         top: num2px(oriTop + (oriHeight - height) / 2)
                     };
+                    me.container.style = css;
                 }
 
-                me.container.style = css;
+                
                 Vue.nextTick(function() {
                     me.zoom(imgData.ratio);
                 });
