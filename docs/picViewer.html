@@ -51,16 +51,13 @@
 </head>
 
 <body>
-    <div id="app">
-        <sf-picviewer></sf-picviewer>
-    </div>
     <div id="demo"></div>
     <script src="https://unpkg.com/vue@2.0.1/dist/vue.js"></script>
     <script src="./index.js"></script>
     <script type="text/x-template" id="demo-t">
         <div class="container">
             <ul class="docs-pictures clearfix">
-                <li v-for="n in 9"><img :src="'./img/thumbnails/tibet-' + n + '.jpg' " @click="showPic"></li>
+                <li v-for="n in 9"><img :src="'./img/thumbnails/tibet-' + n + '.jpg' " @click="showPic(n-1)"></li>
             </ul>
         </div>
     </script>
@@ -74,15 +71,15 @@
 
         },
         methods: {
-            showPic: function() {
-                debugger;
+            showPic: function(ind) {
+                app.$refs.viewer.show(ind);
             }
         }
     });
     new Demo().$mount('#demo');
 
     var app = new Vue({
-        el: '#app',
+    	template:'<sf-picviewer :pics=pics ref="viewer"></sf-picviewer>',
         components: {
             'sf-picviewer': sfPicviewer
         },
@@ -116,7 +113,10 @@
                 src: './img/tibet-9.jpg'
             }]
         }
-    });
+    }).$mount();
+
+    document.body.appendChild(app.$el);
+
     </script>
 </body>
 

@@ -1,1 +1,26 @@
-<h3>hello,sf-picViewer</h3>
+<div class="picviewer-container" tabindex="-1" v-show="isShow" :style="container.style" @mousedown="onMouseDown($event)" @keydown.stop.esc="close" @keydown.stop.up="zoom(image.ratio+0.1)" @keydown.stop.down="zoom(image.ratio-0.1)" @keydown.stop.left="show(index-1)" @keydown.stop.right="show(index+1)" @mousewheel.prevent="onWheel($event)" @webkitfullscreenchange="onFullChange">
+    <div class="picviewer-canvas-wrap">
+        <div class="picviewer-canvas" ref="canvas"></div>
+        <div class="u-icon-font icon-arrowleft" @click.stop="show(index-1)" v-show="index!=0"></div>
+        <div class="u-icon-font icon-arrowright" @click.stop="show(index+1)" v-show="index!=pics.length-1"></div>
+        <div class="picviewer-footer" onselectstart="return false">
+            <div class="picviewer-title">{{index+1}}/{{pics.length}}</div>
+            <div class="picviewer-toolbar-warp">
+                <div class="picviewer-toolbar">
+                    <a class="u-icon-font icon-one2one" :class="{disabled:(Math.round(image.ratio * 100)==100)}" @click.stop.prevent="zoom(1)"></a>
+                    <div class="banner"></div>
+                    <a class="u-icon-font" :class="{disabled:!fullEnabled,'icon-fullscreen':container.isFull,'icon-notfullscreen':!container.isFull}" @click.stop.prevent="switchFull"></a>
+                    <div class="banner"></div>
+                    <a class="u-icon-font icon-zoomin" :class="{disabled:image.ratio>=5}" @click.stop.prevent="zoom(image.ratio+0.1)"></a>
+                    <div class="banner"></div>
+                    <a class="u-icon-font icon-zoomout" :class="{disabled:image.ratio<=0.1}" @click.stop.prevent="zoom(image.ratio-0.1)"></a>
+                    <div class="banner"></div>
+                    <a class="u-icon-font icon-rotate" @click.stop.prevent="rotate"></a>
+                    <div class="banner"></div>
+                    <a class="u-icon-font icon-download" :href="pics[index].src" download></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="u-icon-font icon-close" @click.stop="close"></div>
+</div>
