@@ -6,45 +6,6 @@
     <title>Test</title>
     <link href="http://nec.netease.com/download/framework/reset.css" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-    <style type="text/css">
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    a,
-    a:hover,
-    a:active,
-    a:focus {
-        text-decoration: none;
-        outline: none;
-    }
-    
-    body {
-        overflow: hidden;
-    }
-    
-    .docs-pictures {
-        list-style: none;
-        width: 555px;
-        height: 555px;
-    }
-    
-    .docs-pictures > li {
-        float: left;
-        width: 33.3%;
-        height: 33.3%;
-        margin: 0 -1px -1px 0;
-        border: 1px solid transparent;
-        overflow: hidden;
-        cursor: pointer;
-    }
-    
-    .docs-pictures > li > img {
-        width: 100%;
-    }
-    </style>
 </head>
 
 <body>
@@ -52,7 +13,7 @@
     <script src="https://unpkg.com/vue@2.0.1/dist/vue.js"></script>
     <script src="./index.js"></script>
     <script type="text/x-template" id="demo-t">
-        <ul class="docs-pictures clearfix">
+        <ul class="sf-picviewer-demos clearfix">
             <li v-for="n in 9"><img :src="'./img/thumbnails/tibet-' + n + '.jpg' " @click="showPic(n-1)"></li>
         </ul>
     </script>

@@ -2,5 +2,24 @@
 @import '~7ui-var';
 @import '~7ui-grid';
 @import '~7ui-icon';
-
 @import './picviewer.css';
+.sf-picviewer-demos {
+    list-style: none;
+    width: 555px;
+    height: 555px;
+}
+
+.sf-picviewer-demos > li {
+    box-sizing: border-box;
+    float: left;
+    width: 33.3%;
+    height: 33.3%;
+    margin: 0 -1px -1px 0;
+    border: 1px solid transparent;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.sf-picviewer-demos > li > img {
+    width: 100%;
+}
