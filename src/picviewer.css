@@ -95,6 +95,12 @@
         font-size: 30px;
         color: #fff;
         display: none;
+        font-family: 'iconfont' !important;
+        font-style: normal;
+        font-weight: normal;
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-stroke-width: 0.2px;
+        -moz-osx-font-smoothing: grayscale;
         &.disabled {
             font-size: 30px;
             cursor: default;
@@ -135,6 +141,36 @@
             margin-right: 20px;
             background-color: rgba(0, 0, 0, 0.5);
         }
+        &.icon-one2one:before {
+            content: "\e600";
+        }
+        &.icon-zoomin:before {
+            content: "\e605";
+        }
+        &.icon-notfullscreen:before {
+            content: "\e608";
+        }
+        &.icon-close:before {
+            content: "\e607";
+        }
+        &.icon-fullscreen:before {
+            content: "\e606";
+        }
+        &.icon-arrowleft:before {
+            content: "\e60a";
+        }
+        &.icon-zoomout:before {
+            content: "\e60c";
+        }
+        &.icon-arrowright:before {
+            content: "\e60d";
+        }
+        &.icon-download:before {
+            content: "\e60e";
+        }
+        & .icon-rotate:before {
+            content: "\e60f";
+        }
     }
 }
 
@@ -143,59 +179,4 @@
     /* project id 158250 */
     src: url('http://at.alicdn.com/t/font_g1qf9mqd10tl0udi.eot');
     src: url('http://at.alicdn.com/t/font_g1qf9mqd10tl0udi.eot?#iefix') format('embedded-opentype'), url('http://at.alicdn.com/t/font_g1qf9mqd10tl0udi.woff') format('woff'), url('http://at.alicdn.com/t/font_g1qf9mqd10tl0udi.ttf') format('truetype'), url('http://at.alicdn.com/t/font_g1qf9mqd10tl0udi.svg#iconfont') format('svg');
-}
-
-.u-icon-font {
-    font-family: 'iconfont' !important;
-    font-style: normal;
-    font-weight: normal;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-stroke-width: 0.2px;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-
-/**
- * ICON-FONT -字体图标在此维护
- * update: 2016-10-11
- */
-
-.icon-one2one:before {
-    content: "\e600";
-}
-
-.icon-zoomin:before {
-    content: "\e605";
-}
-
-.icon-notfullscreen:before {
-    content: "\e608";
-}
-
-.icon-close:before {
-    content: "\e607";
-}
-
-.icon-fullscreen:before {
-    content: "\e606";
-}
-
-.icon-arrowleft:before {
-    content: "\e60a";
-}
-
-.icon-zoomout:before {
-    content: "\e60c";
-}
-
-.icon-arrowright:before {
-    content: "\e60d";
-}
-
-.icon-download:before {
-    content: "\e60e";
-}
-
-.icon-rotate:before {
-    content: "\e60f";
 }

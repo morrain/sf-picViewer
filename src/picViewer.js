@@ -115,7 +115,7 @@ module.exports = {
         onFullChange: function(event) {
             var me = this,
                 con = me.container;
-            
+
             if (con.isFull) {
                 me.initImage(me.image.el, true);
             } else {
@@ -125,7 +125,8 @@ module.exports = {
                     width: '100%',
                     height: '100%'
                 };
-                Vue.nextTick(function() {
+                //等视图更新后，再缩放，要用到con的尺寸
+                setTimeout(function() {
                     me.zoom(me.image.ratio);
                 });
             }
@@ -188,11 +189,10 @@ module.exports = {
                     me.container.style = css;
                 }
 
-                
-                Vue.nextTick(function() {
+                //等视图更新后，再缩放，要用到con的尺寸
+                setTimeout(function() {
                     me.zoom(imgData.ratio);
                 });
-
             });
         },
         zoom: function(ratio) {
