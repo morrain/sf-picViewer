@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Test</title>
     <link href="http://nec.netease.com/download/framework/reset.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
     <style type="text/css">
     * {
         margin: 0;
@@ -22,10 +23,6 @@
     
     body {
         overflow: hidden;
-    }
-    
-    .container {
-        margin: 0 auto;
     }
     
     .docs-pictures {
@@ -55,11 +52,9 @@
     <script src="https://unpkg.com/vue@2.0.1/dist/vue.js"></script>
     <script src="./index.js"></script>
     <script type="text/x-template" id="demo-t">
-        <div class="container">
-            <ul class="docs-pictures clearfix">
-                <li v-for="n in 9"><img :src="'./img/thumbnails/tibet-' + n + '.jpg' " @click="showPic(n-1)"></li>
-            </ul>
-        </div>
+        <ul class="docs-pictures clearfix">
+            <li v-for="n in 9"><img :src="'./img/thumbnails/tibet-' + n + '.jpg' " @click="showPic(n-1)"></li>
+        </ul>
     </script>
     <script>
     var Demo = Vue.extend({
@@ -79,7 +74,7 @@
     new Demo().$mount('#demo');
 
     var app = new Vue({
-    	template:'<sf-picviewer :pics=pics ref="viewer"></sf-picviewer>',
+        template: '<sf-picviewer :pics=pics ref="viewer"></sf-picviewer>',
         components: {
             'sf-picviewer': sfPicviewer
         },
@@ -116,7 +111,6 @@
     }).$mount();
 
     document.body.appendChild(app.$el);
-
     </script>
 </body>
 

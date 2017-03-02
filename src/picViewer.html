@@ -1,4 +1,4 @@
-<div class="picviewer-container" tabindex="-1" v-show="isShow" :style="container.style" @mousedown="onMouseDown($event)" @keydown.stop.esc="close" @keydown.stop.up="zoom(image.ratio+0.1)" @keydown.stop.down="zoom(image.ratio-0.1)" @keydown.stop.left="show(index-1)" @keydown.stop.right="show(index+1)" @mousewheel.prevent="onWheel($event)" @webkitfullscreenchange="onFullChange">
+<div class="sf-picviewer" tabindex="-1" v-show="isShow" :style="container.style" @mousedown="onMouseDown($event)" @keydown.stop.esc="close" @keydown.stop.up="zoom(image.ratio+0.1)" @keydown.stop.down="zoom(image.ratio-0.1)" @keydown.stop.left="show(index-1)" @keydown.stop.right="show(index+1)" @mousewheel.prevent="onWheel($event)" @webkitfullscreenchange="onFullChange">
     <div class="picviewer-canvas-wrap">
         <div class="picviewer-canvas" ref="canvas"></div>
         <div class="u-icon-font icon-arrowleft" @click.stop="show(index-1)" v-show="index!=0"></div>

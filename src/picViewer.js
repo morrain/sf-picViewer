@@ -47,9 +47,6 @@ function getImageSize(image, callback) {
     newImage.src = image.src;
 }
 
-
-require('./picViewer.scss');
-
 module.exports = {
     name: 'sf-picviewer',
     template: require('./picViewer.html'),
