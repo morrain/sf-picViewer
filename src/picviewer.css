@@ -101,6 +101,7 @@
         -webkit-font-smoothing: antialiased;
         -webkit-text-stroke-width: 0.2px;
         -moz-osx-font-smoothing: grayscale;
+        line-height: inherit;
         &.disabled {
             font-size: 30px;
             cursor: default;
@@ -168,7 +169,7 @@
         &.icon-download:before {
             content: "\e60e";
         }
-        & .icon-rotate:before {
+        &.icon-rotate:before {
             content: "\e60f";
         }
     }
