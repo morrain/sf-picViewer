@@ -274,8 +274,8 @@ module.exports = {
                 con.action = 'move';
                 imgData.target = null;
                 con.rect = con.el.getBoundingClientRect();
-                con.startX = event.pageX;
-                con.startY = event.pageY;
+                con.startX = event.clientX;
+                con.startY = event.clientY;
             } else {
                 event.preventDefault();
             }
