@@ -13,65 +13,62 @@
     <script src="https://unpkg.com/vue@2.0.1/dist/vue.js"></script>
     <script src="./index.js"></script>
     <script type="text/x-template" id="demo-t">
-        <ul class="sf-picviewer-demos clearfix">
-            <li v-for="n in 9"><img :src="'./img/thumbnails/tibet-' + n + '.jpg' " @click="showPic(n-1)"></li>
-        </ul>
+        <div>
+            <ul class="sf-picviewer-demos clearfix">
+                <li v-for="n in 9"><img :src="'./img/thumbnails/tibet-' + n + '.jpg' " @click="showPic(n-1)"></li>
+            </ul>
+            <sf-picviewer :pics=pics ref="viewer"></sf-picviewer>
+        </div>
     </script>
     <script>
     var Demo = Vue.extend({
         template: "#demo-t",
-        props: {
-
+        data: function() {
+            return {
+                pics: [{
+                    name: 'tibet-1',
+                    src: './img/tibet-1.jpg'
+                }, {
+                    name: 'tibet-2',
+                    src: './img/tibet-2.jpg'
+                }, {
+                    name: 'tibet-3',
+                    src: './img/tibet-3.jpg'
+                }, {
+                    name: 'tibet-4',
+                    src: './img/tibet-4.jpg'
+                }, {
+                    name: 'tibet-5',
+                    src: './img/tibet-5.jpg'
+                }, {
+                    name: 'tibet-6',
+                    src: './img/tibet-6.jpg'
+                }, {
+                    name: 'tibet-7',
+                    src: './img/tibet-7.jpg'
+                }, {
+                    name: 'tibet-8',
+                    src: './img/tibet-8.jpg'
+                }, {
+                    name: 'tibet-9',
+                    src: './img/tibet-9.jpg'
+                }]
+            }
         },
         components: {
-
+            'sf-picviewer': sfPicviewer
         },
         methods: {
             showPic: function(ind) {
-                app.$refs.viewer.show(ind);
+                this.$refs.viewer.show(ind);
             }
+        },
+        mounted: function() {
+            document.body.appendChild(this.$refs.viewer.$el);
         }
     });
     new Demo().$mount('#demo');
 
-    var app = new Vue({
-        template: '<sf-picviewer :pics=pics ref="viewer"></sf-picviewer>',
-        components: {
-            'sf-picviewer': sfPicviewer
-        },
-        data: {
-            pics: [{
-                name: 'tibet-1',
-                src: './img/tibet-1.jpg'
-            }, {
-                name: 'tibet-2',
-                src: './img/tibet-2.jpg'
-            }, {
-                name: 'tibet-3',
-                src: './img/tibet-3.jpg'
-            }, {
-                name: 'tibet-4',
-                src: './img/tibet-4.jpg'
-            }, {
-                name: 'tibet-5',
-                src: './img/tibet-5.jpg'
-            }, {
-                name: 'tibet-6',
-                src: './img/tibet-6.jpg'
-            }, {
-                name: 'tibet-7',
-                src: './img/tibet-7.jpg'
-            }, {
-                name: 'tibet-8',
-                src: './img/tibet-8.jpg'
-            }, {
-                name: 'tibet-9',
-                src: './img/tibet-9.jpg'
-            }]
-        }
-    }).$mount();
-
-    document.body.appendChild(app.$el);
     </script>
 </body>
 
