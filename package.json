@@ -1,6 +1,6 @@
 {
 	  "name": "sf-picviewer",
-	  "version": "0.1.0",
+	  "version": "0.1.1",
 	  "description": "pictures view component",
 	  "scripts": {
 	    "build": "webpack -w --config webpack.config.js",
